@@ -64,7 +64,7 @@ function MusicNotesBG() {
 			left: Math.random() * 100,
 			delay: Math.random() * 6,
 			color: ["#7c3aed", "#f59e42", "#e11d48", "#10b981"][i % 4],
-			icon: ["🎵", "🎶", "🎸", "🎷"][i % 4],
+			icon: ["🎵", "🎶", "🎸", "🎷", "👽", "🧠"][i % 4],
 		}));
 		setNotes(generated);
 	}, []);
