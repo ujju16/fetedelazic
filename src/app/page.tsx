@@ -22,7 +22,7 @@ const menu = [
 ];
 
 const infos = [
-	{ label: "📍 Lieu", value: "Le SotLyLaisse71, 2 place St Georges, 71390 Messey-sur-Grosne" },
+	{ label: "📍 Lieu", value: "2 place St Georges, 71390 Messey-sur-Grosne" },
 	{ label: "🕕 Heure", value: "À partir de 18h" },
 	{ label: "🎟️ Entrée", value: "Gratuite" },
 ];
@@ -115,7 +115,7 @@ export default function Home() {
 			</div>
 			<Main>
 				<div className="w-full flex flex-col items-center justify-center">
-					<div className="w-full flex flex-row justify-center items-stretch gap-10 max-w-[60vw] px-2 md:px-4 lg:px-8 xl:px-12 mt-12">
+					<div className="w-full flex flex-col md:flex-row justify-center items-stretch gap-10 max-w-[60vw] px-2 md:px-4 lg:px-8 xl:px-12 mt-12">
 						<div className="flex-1 flex flex-col items-end">
 							{/* Suppression du titre h2, seul le badge reste au-dessus de la card */}
 							<Section className="w-full flex justify-end">

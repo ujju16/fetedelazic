@@ -27,6 +27,10 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+        <link rel="apple-touch-icon" href="/favicon-192.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
         className={`min-h-screen bg-black font-sans ${geistSans.variable} ${geistMono.variable} antialiased relative`}
