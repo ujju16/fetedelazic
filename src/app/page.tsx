@@ -1,80 +1,136 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import "@fontsource/lobster/400.css";
+
+const menu = [
+  "Andouillette fritte",
+  "Sandwitch Kefta Merguez",
+  "Petite restauration",
+  "Scène ouverte ⇒ Musicien bienvenue, DJ aussi",
+];
+
+const infos = [
+  { label: "📍 Lieu", value: "Le SotLyLaisse71, [Adresse à insérer]" },
+  { label: "🕕 Heure", value: "Ouverture des portes à 18h" },
+  { label: "🎟️ Entrée", value: "Gratuite" },
+];
+
+const photos = {
+  mobile: "/poulet1.jpg",
+  tablet: "/poulet2.jpg",
+  desktop: "/poulet3.jpg",
+  extra: "/poulet4.jpg",
+};
+
+function useDevicePhoto() {
+  const [src, setSrc] = useState(photos.desktop);
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < 640) setSrc(photos.mobile);
+      else if (window.innerWidth < 1024) setSrc(photos.tablet);
+      else if (window.innerWidth < 1440) setSrc(photos.desktop);
+      else setSrc(photos.extra);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return src;
+}
+
+function MusicNotesBG() {
+  const [notes, setNotes] = useState<{
+    left: number;
+    delay: number;
+    color: string;
+    icon: string;
+  }[]>([]);
+  useEffect(() => {
+    const generated = Array.from({ length: 12 }).map((_, i) => ({
+      left: Math.random() * 100,
+      delay: Math.random() * 6,
+      color: ["#7c3aed", "#f59e42", "#e11d48", "#10b981"][i % 4],
+      icon: ["🎵", "🎶", "🎸", "🎷"][i % 4],
+    }));
+    setNotes(generated);
+  }, []);
+  return (
+    <div className="pointer-events-none select-none absolute inset-0 z-0 overflow-hidden">
+      {notes.map((note, i) => (
+        <span
+          key={i}
+          className="absolute animate-music-note top-[-40px] text-3xl opacity-40"
+          style={{
+            left: `${note.left}%`,
+            animationDelay: `${note.delay}s`,
+            color: note.color,
+          }}
+        >
+          {note.icon}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
-  const [bgSrc, setBgSrc] = useState("/poulet-desktop.svg");
-
-  useEffect(() => {
-    const updateBg = () => {
-      if (window.innerWidth < 640) {
-        setBgSrc("/poulet-mobile.svg"); // mobile
-      } else if (window.innerWidth < 1024) {
-        setBgSrc("/poulet-tablette.svg"); // tablette
-      } else {
-        setBgSrc("/poulet-desktop.svg"); // desktop
-      }
-    };
-    updateBg();
-    window.addEventListener("resize", updateBg);
-    return () => window.removeEventListener("resize", updateBg);
-  }, []);
-
+  const photo = useDevicePhoto();
   return (
-    <>
-      <div
-        className="flex flex-col min-h-screen items-center justify-center relative overflow-hidden p-4"
-        style={{
-          background:
-            "linear-gradient(135deg, #a7c7e7 0%, #d1b3ff 100%)",
-        }}
-      >
-        <img
-          src={bgSrc}
-          alt="Poulet punk rockeur dans un bar western"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-            opacity: 0.5,
-            pointerEvents: "none",
-            userSelect: "none",
-            transition: "opacity 0.3s",
-          }}
-        />
-        <div className="relative z-10 w-full flex flex-col items-center">
-          <header className="mb-8 text-center">
-            <h1 className="text-4xl font-bold mb-2 text-purple-800 drop-shadow-lg">
-              Le Sot L&apos;y Laisse Faite la musique !
-            </h1>
-            <p className="text-lg text-gray-700">
-              Samedi 21 juin — Venez avec votre instrument et votre bonne humeur !
-            </p>
-            <p className="text-md text-gray-500 mt-2">
-              Dépressifs s&apos;abstenir 😉
-            </p>
-          </header>
-          <main className="bg-white/80 rounded-xl shadow-lg p-8 max-w-md w-full flex flex-col items-center">
-            <Image
-              src="/vercel.svg"
-              alt="Fête de la musique"
-              width={80}
-              height={80}
-              className="mb-4"
-            />
-            <ul className="text-lg text-gray-800 mb-6 list-disc list-inside">
-              <li>À manger, à boire et pour tous les goûts !</li>
-              <li>Ambiance conviviale et festive</li>
-            </ul>
-          </main>
-          <footer className="mt-10 text-gray-500 text-sm">
-            © 2025 Le Sot L&apos;y Laisse
-          </footer>
+    <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 p-4 overflow-hidden">
+      <MusicNotesBG />
+      <div className="relative z-10 w-full max-w-xl flex flex-col items-center">
+        <h1 className="text-5xl font-extrabold mb-4 text-pink-700 drop-shadow text-center font-[Lobster]">Le Sotlylaisse 71 vous invite</h1>
+      </div>
+      <div className="relative w-full flex justify-center items-center" style={{height: '28vh', minHeight: 140}}>
+        <Image src={photo} alt="Poulet ambiance" fill priority className="object-cover w-full h-full rounded-xl shadow-lg" style={{objectPosition: 'top center', opacity: 0.85}} />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Image src={photo} alt="Poulet ambiance zoom" width={220} height={140} className="rounded-xl shadow-2xl border-4 border-white object-contain bg-white/70" style={{maxWidth: '80%', maxHeight: '80%'}} />
         </div>
       </div>
-    </>
+      <div className="relative z-10 w-full max-w-xl flex flex-col items-center">
+        <h1 className="text-4xl font-bold mb-2 text-purple-800 drop-shadow-lg text-center font-[Lobster]">
+          Menu fête de la Zi&apos;Ck 2025
+        </h1>
+        <p className="text-lg text-gray-700 mb-2 text-center">
+          21 juin 2025
+        </p>
+        <ul className="mb-6 text-lg text-gray-800 bg-white/80 rounded-xl shadow p-4 w-full">
+          {menu.map((item, i) => (
+            <li key={i} className="mb-1">
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div className="mb-6 w-full bg-white/80 rounded-xl shadow p-4">
+          {infos.map((info, i) => (
+            <div key={i} className="mb-1">
+              <span className="font-semibold">{info.label} :</span> {info.value}
+            </div>
+          ))}
+        </div>
+        <div className="text-center text-gray-500 text-sm mt-4">
+          @lesotlylaisse71.fr
+        </div>
+      </div>
+      <style jsx global>{`
+        @keyframes music-note {
+          0% {
+            transform: translateY(0) scale(1) rotate(-10deg);
+            opacity: 0.4;
+          }
+          80% {
+            opacity: 0.7;
+          }
+          100% {
+            transform: translateY(110vh) scale(1.2) rotate(10deg);
+            opacity: 0;
+          }
+        }
+        .animate-music-note {
+          animation: music-note 7s linear infinite;
+        }
+      `}</style>
+    </div>
   );
 }
