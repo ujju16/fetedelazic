@@ -14,6 +14,7 @@ const menu = [
 	"Sandwich 5€",
 	"Andouillette",
 	"Kefta",
+	"Merguez",
 	"Frites 3€",
 	"Boissons fraîches",
 	"Vins",

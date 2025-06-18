@@ -21,6 +21,7 @@ export default function MenuCard({ menu }: MenuProps) {
             const icons: { [key: string]: string } = {
               sandwich: '🥪',
               andouillete: '🌭',
+              merguez: '🌶️', // Icône spécifique pour merguez
               kefta: '🍢',
               frites: '🍟',
               'boissons fraîches': '🥤',
