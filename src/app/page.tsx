@@ -12,7 +12,7 @@ import ArtisteCard from "@/components/ArtisteCard";
 
 const menu = [
 	"Sandwich 5€",
-	"Andouillete",
+	"Andouillette",
 	"Kefta",
 	"Frites 3€",
 	"Boissons fraîches",
