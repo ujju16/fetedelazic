@@ -24,6 +24,7 @@ export default function ArtisteCard() {
           }}
           className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 transition font-bold mt-2"
         >
+          <img src="/jack_audio.jpeg" alt="Jack audio" className="w-7 h-7 rounded-full bg-white border border-pink-300" />
           ▶️ Branchez Les Guitares
         </button>
       </div>
