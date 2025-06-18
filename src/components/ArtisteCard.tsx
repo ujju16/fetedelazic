@@ -4,8 +4,8 @@ export default function ArtisteCard() {
   return (
     <>
       <div className="w-full flex flex-col items-center mb-0">
-        <div className="-mb-10 z-10">
-          <div className="bg-pink-500 rounded-full px-12 py-4 shadow text-3xl font-[Lobster] text-white border-4 border-white inline-block drop-shadow-lg">
+        <div className="-mb-10 z-10 w-full flex justify-center sm:justify-center">
+          <div className="bg-pink-500 rounded-full px-12 py-4 shadow text-3xl font-[Lobster] text-white border-4 border-white inline-block drop-shadow-lg text-center w-full max-w-xs mx-auto">
             Artiste
           </div>
         </div>
