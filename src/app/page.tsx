@@ -2,6 +2,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import "@fontsource/lobster/400.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Main from "@/components/Main";
+import Section from "@/components/Section";
+import MenuCard from "@/components/MenuCard";
 
 const menu = [
   "Andouillette fritte",
@@ -83,67 +88,31 @@ function MusicNotesBG() {
 export default function Home() {
   const photo = useDevicePhoto();
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 p-4 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col bg-gradient-to-br from-blue-100 to-purple-200 overflow-hidden">
       <MusicNotesBG />
-      <div className="relative z-10 w-full max-w-xl flex flex-col items-center">
-        <h1 className="text-5xl font-extrabold mb-4 text-pink-700 drop-shadow text-center font-[Lobster]">Le Sotlylaisse 71 vous invite</h1>
-        <div className="text-lg text-gray-700 mb-4 text-center font-semibold bg-white/80 rounded-xl px-4 py-2 shadow-lg w-fit">21 juin 2025</div>
-        <p className="text-xl text-gray-800 mb-6 text-center">
-          Dépressif s'abstenir !<br />
-          Venez célébrer l'été avec nous le 21 juin 2025 !
-        </p>
-      </div>
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100 to-yellow-300 opacity-50"></div>
-      <div className="relative w-full flex justify-center items-center" style={{height: '28vh', minHeight: 140}}>
-        <Image src={photo} alt="Poulet ambiance" fill priority className="object-cover w-full h-full rounded-xl shadow-lg" style={{objectPosition: 'top center', opacity: 0.85}} />
+      <Header />
+      <div className="relative w-full" style={{height: '28vh', minHeight: 140}}>
+        <Image src={photo} alt="Poulet ambiance" fill priority className="object-cover w-full h-full" style={{objectPosition: 'top center', opacity: 0.85}} />
         <div className="absolute inset-0 flex items-center justify-center">
           <Image src={photo} alt="Poulet ambiance zoom" width={220} height={140} className="rounded-xl shadow-2xl border-4 border-white object-contain bg-white/70" style={{maxWidth: '80%', maxHeight: '80%'}} />
         </div>
       </div>
-      <div className="relative z-10 w-full max-w-xl flex flex-col items-center">
-        <h1 className="text-4xl font-bold mb-2 text-purple-800 drop-shadow-lg text-center font-[Lobster]">
-          Menu fête de la Zi&apos;Ck 2025
-        </h1>
-        <p className="text-lg text-gray-700 mb-2 text-center">
-          21 juin 2025
-        </p>
-        <div className="mb-6 w-full flex justify-center">
-          <div className="bg-white/90 rounded-3xl shadow-2xl border-4 border-yellow-400 max-w-md w-full p-6 relative">
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-yellow-400 rounded-full px-6 py-2 shadow text-xl font-[Lobster] text-white border-2 border-white">Menu</div>
-            <ul className="mt-8 text-lg text-gray-800 font-semibold space-y-3">
-              {menu.map((item, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="text-yellow-500 text-2xl">🍽️</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="mb-6 w-full bg-white/80 rounded-xl shadow p-4">
+      <Main>
+        <Section className="mt-10 mb-8">
+          <MenuCard menu={menu} />
+        </Section>
+        <Section className="mb-8 w-full bg-white/80 rounded-xl shadow p-4">
           {infos.map((info, i) => (
-            <div key={i} className="mb-1">
-              <span className="font-semibold">{info.label} :</span> {info.value}
-            </div>
+            <div key={i} className="mb-1"><span className="font-semibold">{info.label} :</span> {info.value}</div>
           ))}
-        </div>
-        <div className="text-center text-gray-500 text-sm mt-4">
-          @lesotlylaisse71.fr
-        </div>
-      </div>
+        </Section>
+      </Main>
+      <Footer />
       <style jsx global>{`
         @keyframes music-note {
-          0% {
-            transform: translateY(0) scale(1) rotate(-10deg);
-            opacity: 0.4;
-          }
-          80% {
-            opacity: 0.7;
-          }
-          100% {
-            transform: translateY(110vh) scale(1.2) rotate(10deg);
-            opacity: 0;
-          }
+          0% { transform: translateY(0) scale(1) rotate(-10deg); opacity: 0.4; }
+          80% { opacity: 0.7; }
+          100% { transform: translateY(110vh) scale(1.2) rotate(10deg); opacity: 0; }
         }
         .animate-music-note {
           animation: music-note 7s linear infinite;
