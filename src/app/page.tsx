@@ -11,21 +11,19 @@ import StarsBG from "@/components/StarsBG";
 import ArtisteCard from "@/components/ArtisteCard";
 
 const menu = [
-	"Andouillette fritte",
-	"Sandwitch Kefta Merguez",
-	"Frites maison",
-	"Salade verte",
-	"Desserts maison",
+	"Sandwich 5€",
+	"Andouillete",
+	"Kefta",
+	"Frites 3€",
 	"Boissons fraîches",
-	"Cocktails maison",
-	"Vins locaux",
-	"Bières artisanales",
+	"Vins",
+	"Bières",
 	"Café et thés",
 ];
 
 const infos = [
-	{ label: "📍 Lieu", value: "Le SotLyLaisse71, [Adresse à insérer]" },
-	{ label: "🕕 Heure", value: "Ouverture des portes à 18h" },
+	{ label: "📍 Lieu", value: "Le SotLyLaisse71, 2 place St Georges, 71390 Messey-sur-Grosne" },
+	{ label: "🕕 Heure", value: "À partir de 18h" },
 	{ label: "🎟️ Entrée", value: "Gratuite" },
 ];
 
@@ -64,7 +62,7 @@ function MusicNotesBG() {
 			left: Math.random() * 100,
 			delay: Math.random() * 6,
 			color: ["#7c3aed", "#f59e42", "#e11d48", "#10b981"][i % 4],
-			icon: ["🎵", "🎶", "🎸", "🎷", "👽", "🧠"][i % 4],
+			icon: ["🎵", "🎶", "🎸", "🎷", "👽", "🧠"][i % 6],
 		}));
 		setNotes(generated);
 	}, []);
