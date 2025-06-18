@@ -22,7 +22,7 @@ export default function ArtisteCard() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 transition font-bold"
         >
-          ▶️ Écouter l'ambiance
+          ▶️ Écouter l&apos;ambiance
         </a>
       </div>
     </>
