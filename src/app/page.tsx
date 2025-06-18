@@ -6,8 +6,14 @@ import "@fontsource/lobster/400.css";
 const menu = [
   "Andouillette fritte",
   "Sandwitch Kefta Merguez",
-  "Petite restauration",
-  "Scène ouverte ⇒ Musicien bienvenue, DJ aussi",
+  "Frites maison",
+  "Salade verte",
+  "Desserts maison",
+  "Boissons fraîches",
+  "Cocktails maison",
+  "Vins locaux",
+  "Bières artisanales",
+  "Café et thés",
 ];
 
 const infos = [
@@ -81,7 +87,13 @@ export default function Home() {
       <MusicNotesBG />
       <div className="relative z-10 w-full max-w-xl flex flex-col items-center">
         <h1 className="text-5xl font-extrabold mb-4 text-pink-700 drop-shadow text-center font-[Lobster]">Le Sotlylaisse 71 vous invite</h1>
+        <div className="text-lg text-gray-700 mb-4 text-center font-semibold bg-white/80 rounded-xl px-4 py-2 shadow-lg w-fit">21 juin 2025</div>
+        <p className="text-xl text-gray-800 mb-6 text-center">
+          Dépressif s'abstenir !<br />
+          Venez célébrer l'été avec nous le 21 juin 2025 !
+        </p>
       </div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100 to-yellow-300 opacity-50"></div>
       <div className="relative w-full flex justify-center items-center" style={{height: '28vh', minHeight: 140}}>
         <Image src={photo} alt="Poulet ambiance" fill priority className="object-cover w-full h-full rounded-xl shadow-lg" style={{objectPosition: 'top center', opacity: 0.85}} />
         <div className="absolute inset-0 flex items-center justify-center">
