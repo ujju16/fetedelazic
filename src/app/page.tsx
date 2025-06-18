@@ -95,13 +95,19 @@ export default function Home() {
         <p className="text-lg text-gray-700 mb-2 text-center">
           21 juin 2025
         </p>
-        <ul className="mb-6 text-lg text-gray-800 bg-white/80 rounded-xl shadow p-4 w-full">
-          {menu.map((item, i) => (
-            <li key={i} className="mb-1">
-              {item}
-            </li>
-          ))}
-        </ul>
+        <div className="mb-6 w-full flex justify-center">
+          <div className="bg-white/90 rounded-3xl shadow-2xl border-4 border-yellow-400 max-w-md w-full p-6 relative">
+            <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-yellow-400 rounded-full px-6 py-2 shadow text-xl font-[Lobster] text-white border-2 border-white">Menu</div>
+            <ul className="mt-8 text-lg text-gray-800 font-semibold space-y-3">
+              {menu.map((item, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <span className="text-yellow-500 text-2xl">🍽️</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
         <div className="mb-6 w-full bg-white/80 rounded-xl shadow p-4">
           {infos.map((info, i) => (
             <div key={i} className="mb-1">
