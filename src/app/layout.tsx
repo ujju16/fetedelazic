@@ -25,9 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      </head>
       <body
-        className={`min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-screen bg-black font-sans ${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
+        <div id="stars-bg" className="pointer-events-none select-none fixed inset-0 z-0"></div>
         {children}
       </body>
     </html>
