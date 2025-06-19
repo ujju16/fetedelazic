@@ -11,8 +11,8 @@ export default function ArtisteCard() {
         </div>
       </div>
       <div className="bg-white/90 rounded-3xl shadow-2xl border-4 border-pink-500 w-full p-10 md:p-14 lg:p-16 xl:p-20 2xl:p-24 flex flex-col items-center mb-8 sm:border-pink-500 sm:border-4 border-l-0 border-r-0">
-        <div className="inline-block bg-pink-500 text-white font-extrabold rounded-full px-6 py-2 text-lg md:text-xl mb-4 shadow border-2 border-pink-700 flex items-center gap-2 whitespace-nowrap truncate max-w-xs text-center">
-          <span role="img" aria-label="note de musique">🎵</span>
+        <div className="inline-block bg-pink-500 text-white font-extrabold rounded-full px-6 py-2 text-lg md:text-xl mb-4 shadow border-2 border-pink-700 flex items-center gap-3 whitespace-nowrap truncate max-w-xs text-center">
+          <span role="img" aria-label="note de musique" className="mr-1">🎵</span>
           Faites de la musique
         </div>
         <p className="mb-6 text-lg text-gray-800 font-semibold text-center">
