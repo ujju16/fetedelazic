@@ -15,7 +15,43 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Le Sotlylaisse 71 vous invite",
-  description: "Venez fêter la musique au Sotlylaisse !",
+  description: "Venez fêter la musique au Sotlylaisse ! Concerts, menu, ambiance festive à Messey-sur-Grosne (71). Entrée gratuite.",
+  keywords: [
+    "fête de la musique",
+    "Sotlylaisse",
+    "concert",
+    "menu",
+    "Messey-sur-Grosne",
+    "Saône-et-Loire",
+    "musique",
+    "événement",
+    "bar",
+    "soirée",
+    "artiste"
+  ],
+  openGraph: {
+    title: "Le Sotlylaisse 71 vous invite",
+    description: "Venez fêter la musique au Sotlylaisse ! Concerts, menu, ambiance festive à Messey-sur-Grosne (71). Entrée gratuite.",
+    url: "https://lesotlylaisse71.fr/",
+    siteName: "Le Sotlylaisse 71",
+    images: [
+      {
+        url: "/poulet1.jpg",
+        width: 800,
+        height: 600,
+        alt: "Fête de la musique Sotlylaisse 71"
+      }
+    ],
+    locale: "fr_FR",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Le Sotlylaisse 71 vous invite",
+    description: "Venez fêter la musique au Sotlylaisse ! Concerts, menu, ambiance festive à Messey-sur-Grosne (71). Entrée gratuite.",
+    images: ["/poulet1.jpg"]
+  },
+  metadataBase: new URL("https://lesotlylaisse71.fr/")
 };
 
 export default function RootLayout({
