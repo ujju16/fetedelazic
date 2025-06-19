@@ -37,10 +37,13 @@ export default function ArtisteCard() {
               }
             }
           }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 transition font-bold mt-2 w-full max-w-xs justify-center whitespace-nowrap overflow-hidden text-ellipsis min-w-0"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-yellow-400 text-white rounded-full shadow-lg hover:scale-105 hover:from-pink-600 hover:to-yellow-500 transition font-bold mt-2 w-full max-w-sm justify-center whitespace-nowrap overflow-hidden min-w-0 border-2 border-pink-300"
         >
-          <img src="/jack_audio.jpeg" alt="Jack audio" className="w-7 h-7 rounded-full bg-white border border-pink-300 flex-shrink-0" />
-          <span className="truncate flex-1 text-center">▶️ Branchez Les Guitares</span>
+          {/* Jack visible uniquement à partir de sm */}
+          <img src="/jack_audio.jpeg" alt="Jack audio" className="w-7 h-7 rounded-full bg-white border border-pink-300 flex-shrink-0 hidden sm:inline" />
+          <span className="flex-1 text-center block sm:inline">
+            <span className="hidden sm:inline">▶️ </span>Branchez Les Guitares
+          </span>
         </button>
       </div>
     </>

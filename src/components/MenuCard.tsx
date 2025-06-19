@@ -39,10 +39,10 @@ export default function MenuCard({ menu }: MenuProps) {
               const priceMatch = item.match(/(\d+(?:[.,]\d+)?)[ ]*€/);
               const price = priceMatch ? priceMatch[1] : '';
               return (
-                <li key={i} className="flex flex-row items-center text-left gap-2 sm:gap-4 md:gap-6 min-w-0">
+                <li key={i} className="flex flex-row items-center text-left gap-2 sm:gap-4 md:gap-8 min-w-0">
                   <span className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">{icon}</span>
-                  <span className="text-fuchsia-800 font-bold text-base sm:text-lg md:text-xl flex-1 min-w-0 truncate">{before}</span>
-                  <span className="inline-block bg-yellow-400 text-fuchsia-900 font-extrabold rounded-full px-3 py-1 text-xs sm:text-base md:text-lg ml-2 shadow border-2 border-yellow-600 align-middle flex-shrink-0 max-w-[80px] text-center" style={{lineHeight: '1.8'}}>
+                  <span className="text-fuchsia-800 font-bold text-base sm:text-lg md:text-xl flex-1 min-w-0">{before}</span>
+                  <span className="inline-block bg-yellow-400 text-fuchsia-900 font-extrabold rounded-full px-3 py-1 text-xs sm:text-base md:text-lg ml-4 shadow border-2 border-yellow-600 align-middle flex-shrink-0 max-w-[100px] text-center" style={{lineHeight: '1.8'}}>
                     {price} €
                   </span>
                 </li>
@@ -51,7 +51,7 @@ export default function MenuCard({ menu }: MenuProps) {
             return (
               <li key={i} className="flex flex-row items-center text-left gap-2 sm:gap-4 md:gap-6 min-w-0">
                 <span className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">{icon}</span>
-                <span className="text-fuchsia-800 font-bold text-base sm:text-lg md:text-xl flex-1 min-w-0 truncate">{item}</span>
+                <span className="text-fuchsia-800 font-bold text-base sm:text-lg md:text-xl flex-1 min-w-0">{item}</span>
               </li>
             );
           })}
