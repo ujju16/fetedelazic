@@ -129,13 +129,26 @@ export default function Home() {
 							</Section>
 						</div>
 					</div>
-					<Section className="w-full mt-10 mb-8">
-						{infos.map((info, i) => (
-							<div key={i} className="mb-1">
-								<span className="font-semibold">{info.label} :</span> {info.value}
+					{/* Bloc infos pratiques aligné */}
+					<div className="w-full flex justify-center mt-10 mb-8">
+						<Section className="w-full max-w-[60vw]">
+							<div className="flex flex-col sm:flex-row gap-6 justify-center items-stretch w-full">
+								{infos.map((info, i) => (
+									<div
+										key={i}
+										className="flex-1 bg-gradient-to-br from-[#1a0e2a] via-[#2d133d] to-[#1a0e2a] rounded-3xl shadow-2xl border-4 border-white px-6 py-6 flex flex-col items-center justify-start min-w-[180px] w-full animate-pulse-slow"
+									>
+										<span className="inline-block bg-gradient-to-r from-[#2d133d] via-[#3a1d5c] to-[#1a0e2a] text-white font-extrabold rounded-full px-6 py-2 text-xl md:text-2xl mb-3 shadow border-2 border-pink-400 drop-shadow-lg mt-0 self-center text-center">
+											{info.label}
+										</span>
+										<span className="text-lg md:text-2xl font-bold text-white text-center drop-shadow-lg tracking-wide mt-2">
+											{info.value}
+										</span>
+									</div>
+								))}
 							</div>
-						))}
-					</Section>
+						</Section>
+					</div>
 				</div>
 			</Main>
 			<Footer />

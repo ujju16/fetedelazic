@@ -4,12 +4,12 @@ export default function Footer() {
   const [showLegal, setShowLegal] = useState(false);
   return (
     <>
-      <footer className="w-full flex flex-col items-center pt-6 pb-4 mt-10 text-center text-gray-500 text-sm z-10 bg-white/60">
+      <footer className="w-full flex flex-col items-center pt-6 pb-4 mt-10 text-center text-white text-sm z-10 bg-gradient-to-b from-[#181028] via-[#12091a] to-[#0a0610]">
         <div>@lesotlylaisse71.fr</div>
         <div className="mt-1">KornshDEV 2025 &copy; Tous droits réservés</div>
         <div className="mt-1">
           <button
-            className="underline hover:text-pink-600 transition"
+            className="underline hover:text-pink-400 transition"
             title="Mentions légales"
             onClick={() => setShowLegal(true)}
           >
