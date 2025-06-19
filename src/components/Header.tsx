@@ -27,13 +27,13 @@ export default function Header() {
           <span role="img" aria-label="fête de la musique" className="text-3xl">🎉</span>
         </span>
       </div>
-      <h1 className="text-4xl sm:text-6xl font-[Lobster] drop-shadow-lg text-center font-extrabold tracking-wide select-none flex flex-wrap justify-center">
-        {title.split("").map((char, i) => (
-          char === " " ? (
-            <span key={i} className="w-2 sm:w-3 inline-block"> </span>
-          ) : (
-            <span key={i} className={colors[i % colors.length]}>{char}</span>
-          )
+      <h1 className="text-4xl sm:text-6xl font-[Lobster] drop-shadow-lg text-center font-extrabold tracking-wide select-none flex flex-wrap justify-center break-words whitespace-pre-line">
+        {title.split(" ").map((word, wi) => (
+          <span key={wi} className="inline-block mx-1 whitespace-nowrap">
+            {word.split("").map((char, i) => (
+              <span key={i} className={colors[(wi*10+i) % colors.length]}>{char}</span>
+            ))}
+          </span>
         ))}
       </h1>
     </header>
