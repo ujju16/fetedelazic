@@ -8,8 +8,13 @@ export default function Header() {
           Le Sotlylaisse 71 vous invite
         </div>
       </div>
-      <div className="text-lg text-gray-700 mb-4 text-center font-semibold bg-white/80 rounded-xl px-4 py-2 shadow-lg w-fit mx-auto">
-        21 juin 2025
+      {/* Badge stylisé 21 juin 2025 avec icônes */}
+      <div className="flex items-center justify-center">
+        <span className="flex items-center gap-2 bg-gradient-to-r from-[#2d133d] via-[#e11d48] to-[#f59e42] text-white font-extrabold rounded-full px-8 py-3 text-2xl md:text-3xl shadow-lg border-4 border-white drop-shadow-lg animate-pulse-slow" style={{fontFamily: 'Lobster, cursive'}}>
+          <span role="img" aria-label="calendrier" className="text-3xl">📅</span>
+          21 juin 2025
+          <span role="img" aria-label="fête de la musique" className="text-3xl">🎉</span>
+        </span>
       </div>
     </header>
   );
